@@ -1,0 +1,58 @@
+<div class="container">
+
+<div class="search-div">
+
+  <mat-form-field class="form-field" floatLabel="never">
+    <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+
+    <div matSuffix  aria-label="Clear" *ngIf="searchKey"  (click)="onSearchClear()">
+      <i class="fa fa-times " id ="cols"></i>
+    </div>
+  </mat-form-field>
+</div>
+<div class="mat-elevation-z8">
+  <mat-table [dataSource]="listData"  matSort>
+    <ng-container matColumnDef="Sl No">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Sl No.</mat-header-cell>
+      <mat-cell *matCellDef="let element ,let i = index;">{{i+1}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Media">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Media</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.mediaSubject}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="DeviceId">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>DeviceId</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.deviceId}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Start Time">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Start Time</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element?.startTime?.seconds*1000 | date:'yyyy/MM/dd HH:mm:ss' }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="End Time">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>End Time</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element?.endTime?.seconds*1000 | date:'yyyy/MM/dd HH:mm:ss' }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Server Time">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Server Time</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element?.uploadTime?.seconds*1000 | date:'yyyy/MM/dd HH:mm:ss'}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Watch Time">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Watch Time</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.watchMinutes}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row">
+
+      </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+
+  </mat-table>
+  <mat-paginator  [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>
+</div>

@@ -1,0 +1,125 @@
+.example-form-field{
+  padding-left: 890px;
+}
+
+thead th{
+  vertical-align: bottom;
+  font-weight:  normal !important;
+  border-bottom: white;
+}
+
+
+
+table {
+
+  margin: 25px auto;
+
+  background-color: white;
+  border-collapse: collapse;
+  border: 1px solid #eee;
+
+  box-shadow:
+     0px 10px 20px rgba(0,0,0,0.05),
+     0px 20px 20px rgba(0,0,0,0.05),
+     0px 30px 20px rgba(0,0,0,0.05);
+}
+
+#stab{
+  padding-top: 80px;
+  border:1 px solid black;
+}
+  /* Reset Select */
+  select {
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+
+    background-color:white;
+    background-image: none;
+    padding-top: 30px;
+    line-height: 2;
+
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+
+    display: flex;
+    width: 20em;
+    height: 2em;
+    border: 1px solid black;
+    line-height: 2;
+    background: #2c3e50;
+    overflow: hidden;
+    border-radius: .25em;
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: black;
+    border: 1px black;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px black;
+    padding: 0 1em;
+    background: #34495e;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: white;
+  }
+.pad{
+  padding-top: 30px;
+}
+
+.example-form-field {
+  margin-right: 20px;
+}
+button {
+  background-color:rgb(45, 39, 136);
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn2{
+  background-color:rgb(185, 29, 37);
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+
+}
+
+#down
+{
+  text-align: right;
+}
+
+.container
+{
+  background-color: white;
+}
+
+

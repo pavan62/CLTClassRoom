@@ -1,0 +1,153 @@
+<div class="container">
+<div class='row'>
+
+  <div class="col-md-9"></div>
+  <div class="col-sm-1">
+  <!-- <mat-form-field  class="example-form-field">
+    <mat-label>{{today1}}</mat-label>
+    <input matInput [matDatepicker]="datepicker" [(ngModel)]="selectdate" >
+    <mat-datepicker-toggle matSuffix [for]="datepicker" ></mat-datepicker-toggle>
+    <mat-datepicker #datepicker>
+      <mat-datepicker-actions>
+        <button class="btn2" mat-button matDatepickerCancel>Cancel</button>&nbsp;
+        <button  mat-raised-button  matDatepickerApply (click)="takedata1()">Apply</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+  </mat-form-field> -->
+    <!-- <div class="select">
+      <select name="slct" id="slct" (change)="takedata($event)">
+        <option selected disabled>Select Date</option>
+        <option *ngFor="let sport of dates" [value]="sport.id">{{sport.id}}</option>
+      </select>
+    </div> -->
+</div>
+
+</div>
+  <div class="row">
+    <div class="col ">
+        <div class="table-responsive" >
+          <mat-form-field  class="example-form-field">
+            <mat-label>{{today1}}</mat-label>
+            <input matInput [matDatepicker]="datepicker" [(ngModel)]="selectdate" >
+            <mat-datepicker-toggle matSuffix [for]="datepicker" ></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button class="btn2" mat-button matDatepickerCancel>Cancel</button>&nbsp;
+                <button  mat-raised-button  matDatepickerApply (click)="takedata1()">Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
+              <table  class="table">
+
+                  <thead >
+                      <tr>
+                          <th>AppFlowClicks</th>
+                          <th>VideosWatched</th>
+                          <th>TextbooksRead</th>
+                          <th>SuccessfulLogins</th>
+                          <th>AssessmentsDone</th>
+                          <th>Selected Date</th>
+
+                      </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr *ngFor="let s of dat" >
+
+                     <!-- <td> {{ s.analyticsDate.seconds*1000 | date:'yyyy/MM/dd '}}</td>
+                     <td> {{ selectdate | date:'yyyy/MM/dd' }}</td> -->
+                     <td *ngIf="s.analyticsDateString== matdate">{{s.dateAppFlowClicks}}</td>
+
+
+                        <td *ngIf="s.analyticsDateString==matdate">   {{s.dateNumberVideosWatched}}</td>
+                        <td *ngIf="s.analyticsDateString==matdate"> {{s.dateNumberTextbooksRead}}</td>
+                        <td *ngIf="s.analyticsDateString==matdate"> {{s.dateSuccessfulLogins}} </td>
+                        <td *ngIf="s.analyticsDateString==matdate"> {{s.dateAssessmentsDone}}</td>
+                        <td *ngIf="s.analyticsDateString==matdate"> {{s.analyticsDateString}} </td>
+
+
+
+                    </tr>
+                  </tbody>
+              </table>
+
+</div>
+        </div>
+</div>
+</div>
+<div class="container" id="stab">
+<div class="row" >
+<div class="col-md-8"></div>
+
+  <div class="col-md-2">
+    <div class="select" id="opn">
+      <select name="slct" id="slct" (change)="takedataMonth($event)">
+        <option selected disabled>Select Date</option>
+        <option value="month">1 Month Data</option>
+        <option value="week">1 Week Data</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col" id="down">
+
+    <a style="cursor: pointer" (click)="exportexcel()" >
+
+        <i class="fa fa-download fa-2x" title="Download XlSX " id="_download"></i>
+
+
+
+
+
+
+    </a>
+  </div>
+
+</div>
+
+<div class="row">
+<div class="col ">
+    <div >
+          <table  id="excel-table" class="table">
+              <thead>
+                  <tr>
+
+                      <th>AppFlowClicks</th>
+                      <th>VideosWatched</th>
+                      <th>TextbooksRead</th>
+                      <th>SuccessfulLogins</th>
+                      <th>AssessmentsDone</th>
+                      <th>Date</th>
+
+                  </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let s of dat let i = index" >
+
+                 <!-- <td> {{ s.analyticsDate.seconds*1000 | date:'yyyy/MM/dd '}}</td>
+                 <td> {{ selectdate | date:'yyyy/MM/dd' }}</td> -->
+                 <!-- <td *ngIf="s.analyticsDate.seconds*1000 | date :'yyyy/MM/dd '== selectdate | date:'yyyy/MM/dd'">{{s.dateAppFlowClicks}}</td> -->
+
+                 <td  *ngIf="s.analyticsDateString>=oneweek"> {{s.dateAppFlowClicks}}</td>
+                    <td *ngIf="s.analyticsDateString>=oneweek">   {{s.dateNumberVideosWatched}}</td>
+                    <td *ngIf="s.analyticsDateString>=oneweek"> {{s.dateNumberTextbooksRead}}</td>
+                    <td *ngIf="s.analyticsDateString>=oneweek"> {{s.dateSuccessfulLogins}} </td>
+                    <td *ngIf="s.analyticsDateString>=oneweek"> {{s.dateAssessmentsDone}}</td>
+                    <td *ngIf="s.analyticsDateString>=oneweek"> {{s.analyticsDateString}} </td>
+
+
+
+                </tr>
+              </tbody>
+          </table>
+
+</div>
+    </div>
+</div>
+
+
+
+
+</div>
+

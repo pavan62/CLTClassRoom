@@ -1,0 +1,79 @@
+<!-- <div class="container">
+  <div class="row justify-content-center p-4">
+
+      <div class="col-md-6">
+          <form (ngSubmit)="login()">
+          <h3>Login</h3>
+          <div class="form-group p-2">
+            <label >UserName</label>
+
+          <input type="email" name="email" class="form-control" [(ngModel)]="email" placeholder="Enter email Id" required>
+      </div>
+      <div class="form-group">
+        <label >Password</label>
+          <input type="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Enter Password" required>
+      </div>
+
+      <div class="form-group p-2">
+          <button type="submit" class="btn btn-primary">Login</button>
+          <div class="register"><a href="#" routerLink="/register">New User Register</a></div>
+      </div>
+      </form>
+      <div class="form-group">
+          <p *ngIf="errorMessage.length > 0" class="text-danger">
+              {{errorMessage}}</p>
+
+          <p *ngIf="error.message.length > 0" class="text-danger">
+              {{error.message}} </p>
+
+
+      </div>
+      </div>
+
+  </div>
+</div> -->
+
+
+<body>
+  <section>
+    <div class="container">
+      <div class="user signinBx">
+        
+        <div class="formBx">
+          <form (ngSubmit)="login()">
+            <h2>Sign In</h2>
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" [(ngModel)]="email" placeholder="Enter email Id" required>
+            </div>
+
+            <div class="form-group">
+            <input type="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Enter Password" required>
+            </div>
+            <div class="form-group">
+              <input type="submit" name="" value="Login" />
+              <p class="signup">
+                Don't have an account ?
+                <a href="#" routerLink="/register">Sign Up.</a>
+              </p>
+            </div>
+            <small *ngIf="errorMessage.length > 0" class="text-danger">*
+              {{errorMessage}}</small>
+
+          <small *ngIf="error.message.length > 0" class="text-danger">*
+              {{error.message}} </small>
+
+
+
+
+
+          </form>
+
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+</body>
