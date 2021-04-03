@@ -4,14 +4,14 @@
 
 export const environment = {
   production: false,
-  firebaseConfig :{
-    apiKey: "AIzaSyBjcK7w5qfkm5mc-KhQDz7c-BBlbuC0ksk",
-    authDomain: "clt-classroom-21ee7.firebaseapp.com",
-    projectId: "clt-classroom-21ee7",
-    storageBucket: "clt-classroom-21ee7.appspot.com",
-    messagingSenderId: "744160317473",
-    appId: "1:744160317473:web:feb448e104b6c370e05360"
-  }
+  // firebaseConfig :{
+  //   apiKey: "AIzaSyBjcK7w5qfkm5mc-KhQDz7c-BBlbuC0ksk",
+  //   authDomain: "clt-classroom-21ee7.firebaseapp.com",
+  //   projectId: "clt-classroom-21ee7",
+  //   storageBucket: "clt-classroom-21ee7.appspot.com",
+  //   messagingSenderId: "744160317473",
+  //   appId: "1:744160317473:web:feb448e104b6c370e05360"
+  // }
 };
 /*
  * For easier debugging in development mode, you can import the following file

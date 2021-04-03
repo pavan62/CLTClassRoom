@@ -3,23 +3,7 @@
 
   <div class="col-md-9"></div>
   <div class="col-sm-1">
-  <!-- <mat-form-field  class="example-form-field">
-    <mat-label>{{today1}}</mat-label>
-    <input matInput [matDatepicker]="datepicker" [(ngModel)]="selectdate" >
-    <mat-datepicker-toggle matSuffix [for]="datepicker" ></mat-datepicker-toggle>
-    <mat-datepicker #datepicker>
-      <mat-datepicker-actions>
-        <button class="btn2" mat-button matDatepickerCancel>Cancel</button>&nbsp;
-        <button  mat-raised-button  matDatepickerApply (click)="takedata1()">Apply</button>
-      </mat-datepicker-actions>
-    </mat-datepicker>
-  </mat-form-field> -->
-    <!-- <div class="select">
-      <select name="slct" id="slct" (change)="takedata($event)">
-        <option selected disabled>Select Date</option>
-        <option *ngFor="let sport of dates" [value]="sport.id">{{sport.id}}</option>
-      </select>
-    </div> -->
+
 </div>
 
 </div>
@@ -54,8 +38,7 @@
                   <tbody>
                     <tr *ngFor="let s of dat" >
 
-                     <!-- <td> {{ s.analyticsDate.seconds*1000 | date:'yyyy/MM/dd '}}</td>
-                     <td> {{ selectdate | date:'yyyy/MM/dd' }}</td> -->
+
                      <td *ngIf="s.analyticsDateString== matdate">{{s.dateAppFlowClicks}}</td>
 
 
@@ -125,9 +108,7 @@
               <tbody>
                 <tr *ngFor="let s of dat let i = index" >
 
-                 <!-- <td> {{ s.analyticsDate.seconds*1000 | date:'yyyy/MM/dd '}}</td>
-                 <td> {{ selectdate | date:'yyyy/MM/dd' }}</td> -->
-                 <!-- <td *ngIf="s.analyticsDate.seconds*1000 | date :'yyyy/MM/dd '== selectdate | date:'yyyy/MM/dd'">{{s.dateAppFlowClicks}}</td> -->
+               
 
                  <td  *ngIf="s.analyticsDateString>=oneweek"> {{s.dateAppFlowClicks}}</td>
                     <td *ngIf="s.analyticsDateString>=oneweek">   {{s.dateNumberVideosWatched}}</td>
